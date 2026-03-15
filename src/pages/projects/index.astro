@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets'
+
+import { Button, Collapse, Icon } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'ai-projects', text: 'AI Projects' },
+  { depth: 2, slug: 'developer-tools', text: 'Developer Tools' },
+  { depth: 2, slug: 'academic-projects', text: 'Academic Projects' }
+]
+---
+
+<PageLayout title='Projects' {headings} view>
+  <p>
+    A collection of projects I've built — from AI-powered applications to systems programming.
+    Check out my <a href='https://github.com/kevingao25' target='_blank'>GitHub</a> for the full list.
+  </p>
+  <p>Github Activities:</p>
+  <p>
+    <Image
+      src='https://ghchart.rshah.org/659eb9/kevingao25'
+      alt='github activities'
+      inferSize
+      loading='lazy'
+    />
+  </p>
+
+  <h2 id='ai-projects'>AI Projects</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: '🧠 AI Mental Journaling',
+        description: 'AI-powered journaling app for mental wellness and self-reflection',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/ai-mental-journaling' }
+        ]
+      },
+      {
+        name: '🎙️ AI Voice Therapist',
+        description: 'Voice-based AI therapy assistant',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/ai-voice-therapist' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='developer-tools'>Developer Tools</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: '📊 PDF Table Extractor',
+        description: 'Extract financial tables from banking statements and convert to Excel',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/pdf-table-extractor' }
+        ]
+      },
+      {
+        name: '🔎 Pathfinding Visualizer',
+        description: 'Interactive visualizer for BFS, DFS, Dijkstra, and A* algorithms',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/Pathfinding-Visualizer' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='academic-projects'>Academic Projects</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: '♟️ Chess Engine',
+        description: 'A chess project with SDL built entirely with C++',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/chess-engine' }
+        ]
+      },
+      {
+        name: '🌄 Ray Tracing Engine',
+        description: 'Ray tracing renderer built from scratch in C++',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/RayTracing-engine' }
+        ]
+      },
+      {
+        name: '🍬 Candy Launcher 3000',
+        description: 'Automatic candy dispenser powered by OpenCV and Raspberry Pi',
+        links: [
+          { type: 'github', href: 'https://github.com/kevingao25/Candy-launcher-3000' }
+        ]
+      }
+    ]}
+  />
+</PageLayout>

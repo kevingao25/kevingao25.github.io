@@ -1,0 +1,100 @@
+---
+import { Button, Timeline } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ToolSection from '@/components/about/ToolSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'what-i-do', text: 'What I Do' },
+  { depth: 2, slug: 'tools', text: 'Tools' },
+  { depth: 2, slug: 'about-blog', text: 'About This Blog' }
+]
+---
+
+<PageLayout title='About' {headings}>
+  <p>Software Engineer · AI Systems Builder</p>
+  <p>
+    I'm Kevin — a Computer Science graduate from the University of Waterloo, currently working as a Software Development Engineer at AWS DynamoDB in Seattle. I work on distributed systems at scale.
+  </p>
+  <p>
+    I'm deeply interested in AI engineering — particularly RAG systems, multi-agent orchestration, and LLM evaluation frameworks. I'm transitioning into an AI Engineer role and documenting everything I learn here.
+  </p>
+
+  <h2 id='what-i-do'>What I Do</h2>
+  <ul>
+    <li>Build and operate distributed database systems at AWS DynamoDB</li>
+    <li>Explore RAG pipelines, vector databases, and retrieval strategies</li>
+    <li>Experiment with multi-agent architectures and orchestration frameworks</li>
+    <li>Study LLM evaluation methods (RAGAS, human-in-the-loop, benchmarking)</li>
+    <li>Write about AI engineering, systems design, and career growth</li>
+  </ul>
+
+  <h2 id='tools'>Tools</h2>
+  <p>Technologies and tools I use daily:</p>
+  <ToolSection
+    class='mb-5'
+    title='Development'
+    tools={[
+      {
+        name: 'VS Code',
+        description: 'IDE',
+        href: 'https://code.visualstudio.com/',
+        icon: import('@/assets/tools/vscode.svg?raw')
+      },
+      {
+        name: 'Neovim',
+        description: 'IDE',
+        href: 'https://neovim.io/',
+        icon: import('@/assets/tools/neovim.svg?raw')
+      }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Productivity'
+    tools={[
+      {
+        name: 'Chrome',
+        description: 'Browser',
+        href: 'https://www.google.com/chrome/',
+        icon: import('@/assets/tools/chrome.svg?raw')
+      },
+      {
+        name: 'Notion',
+        description: 'Note Taking',
+        href: 'https://www.notion.so/',
+        icon: import('@/assets/tools/notion.svg?raw')
+      }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Environment'
+    tools={[
+      {
+        name: 'MacOS',
+        description: 'MacBook Pro',
+        href: 'https://www.apple.com/macos/',
+        icon: import('@/assets/tools/apple.svg?raw')
+      }
+    ]}
+  />
+
+  <h2 id='about-blog'>About This Blog</h2>
+  <p>
+    This blog is where I share what I'm learning as I transition from distributed systems engineering into AI. Topics include RAG architectures, agent design patterns, LLM evaluation, and career reflections.
+  </p>
+  <Timeline
+    events={[
+      {
+        date: '2026-03-14',
+        content:
+          'Blog launched using <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://github.com/cworld1/astro-theme-pure" target="_blank">Astro Theme Pure</a>'
+      }
+    ]}
+  />
+  <p>
+    Built with <a href='https://astro.build/' target='_blank'>Astro</a> +
+    <a href='https://github.com/cworld1/astro-theme-pure' target='_blank'>Astro Theme Pure</a>,
+    hosted on <a href='https://pages.github.com/' target='_blank'>GitHub Pages</a>.
+  </p>
+</PageLayout>
