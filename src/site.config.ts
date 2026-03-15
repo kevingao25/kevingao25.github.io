@@ -53,7 +53,7 @@ export const theme: ThemeUserConfig = {
       }
     },
     blogPageSize: 8,
-    share: ['x', 'bluesky']
+    share: []
   }
 }
 
